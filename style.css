@@ -1,0 +1,248 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #faf6f0;
+  color: #26231e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 14px;
+}
+
+.game-card {
+  width: 100%;
+  max-width: 540px;
+  background-color: #ffffff;
+  border: 1.5px solid #e4dccf;
+  border-radius: 12px;
+  padding: 26px 22px;
+  box-shadow: 0 6px 18px rgba(38, 35, 30, 0.06);
+}
+
+.game-header {
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #ece5d8;
+}
+
+.game-header h1 {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: #2f5d50;
+  margin-bottom: 4px;
+}
+
+.game-header p {
+  font-size: 0.92rem;
+  color: #6b6458;
+}
+
+.level-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.level-btn {
+  flex: 1;
+  padding: 9px 8px;
+  border: 1.5px solid #d8cfc0;
+  background-color: #faf6f0;
+  color: #26231e;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.level-btn:hover {
+  border-color: #2f5d50;
+}
+
+.level-btn.active {
+  background-color: #2f5d50;
+  border-color: #2f5d50;
+  color: #ffffff;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.stat-box {
+  background-color: #faf6f0;
+  border: 1px solid #e4dccf;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.75rem;
+  color: #6b6458;
+  margin-bottom: 3px;
+}
+
+.stat-value {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #c85a32;
+}
+
+.guess-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+#guessInput {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1.5px solid #d8cfc0;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #26231e;
+  background-color: #ffffff;
+}
+
+#guessInput:focus {
+  outline: none;
+  border-color: #2f5d50;
+}
+
+.btn {
+  padding: 10px 16px;
+  border: 1.5px solid transparent;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.primary-btn {
+  background-color: #2f5d50;
+  color: #ffffff;
+}
+
+.primary-btn:hover:not(:disabled) {
+  background-color: #24493e;
+}
+
+.secondary-btn {
+  background-color: #ffffff;
+  color: #c85a32;
+  border-color: #e3b5a4;
+}
+
+.secondary-btn:hover:not(:disabled) {
+  background-color: #fdf3ef;
+}
+
+.feedback-box {
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 0.93rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  border: 1px solid #e4dccf;
+  background-color: #faf6f0;
+  color: #26231e;
+}
+
+.feedback-box.neutral {
+  background-color: #f2f7f5;
+  border-color: #c7ddd6;
+  color: #24493e;
+}
+
+.feedback-box.low,
+.feedback-box.high {
+  background-color: #fdf3ef;
+  border-color: #ecc6b8;
+  color: #a84622;
+}
+
+.feedback-box.win {
+  background-color: #e8f5ef;
+  border-color: #2f5d50;
+  color: #1f4439;
+}
+
+.feedback-box.lose {
+  background-color: #fbeae5;
+  border-color: #c85a32;
+  color: #963b19;
+}
+
+.history-section {
+  background-color: #faf6f0;
+  border: 1px solid #e4dccf;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #6b6458;
+  margin-bottom: 8px;
+}
+
+.history-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-height: 24px;
+}
+
+.guess-chip {
+  padding: 4px 9px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  background-color: #e8f5ef;
+  color: #24493e;
+  border: 1px solid #c7ddd6;
+}
+
+.guess-chip.low,
+.guess-chip.high {
+  background-color: #fdf3ef;
+  color: #a84622;
+  border-color: #ecc6b8;
+}
+
+@media (max-width: 520px) {
+  .game-card {
+    padding: 20px 16px;
+  }
+
+  .level-bar {
+    flex-direction: column;
+  }
+
+  .guess-form {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

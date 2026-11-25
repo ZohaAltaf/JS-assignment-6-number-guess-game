@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Number Guess Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-card">
+    <div class="game-header">
+      <h1>Number Guess Game</h1>
+      <p>Select a difficulty level and guess the hidden number.</p>
+    </div>
+
+    <div class="level-bar">
+      <button type="button" class="level-btn active" data-level="easy">Easy (1-20)</button>
+      <button type="button" class="level-btn" data-level="medium">Medium (1-50)</button>
+      <button type="button" class="level-btn" data-level="hard">Hard (1-100)</button>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-box">
+        <span class="stat-label">Range</span>
+        <strong id="rangeText" class="stat-value">1 - 20</strong>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Attempts Left</span>
+        <strong id="attemptsText" class="stat-value">7</strong>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Best Score</span>
+        <strong id="bestScoreText" class="stat-value">--</strong>
+      </div>
+    </div>
+
+    <form id="guessForm" class="guess-form">
+      <input
+        type="number"
+        id="guessInput"
+        placeholder="Your guess"
+        min="1"
+        max="20"
+        required
+      />
+      <button type="submit" id="guessBtn" class="btn primary-btn">Guess</button>
+      <button type="button" id="restartBtn" class="btn secondary-btn">Reset</button>
+    </form>
+
+    <div id="feedbackBox" class="feedback-box neutral">
+      Pick a number between 1 and 20 to start.
+    </div>
+
+    <div class="history-section">
+      <div class="history-header">
+        <span>Guessed Numbers</span>
+        <span id="guessCount">0 guesses</span>
+      </div>
+      <div id="historyList" class="history-list"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
